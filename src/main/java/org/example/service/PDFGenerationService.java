@@ -1,6 +1,8 @@
 package org.example.service;
 
 import com.itextpdf.io.font.constants.StandardFonts;
+import com.itextpdf.io.image.ImageData;
+import com.itextpdf.io.image.ImageDataFactory;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.pdf.PdfDocument;
@@ -13,10 +15,13 @@ import com.itextpdf.layout.properties.TextAlignment;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class PDFGenerationService {
     public static void main(String[] args) throws IOException {
-        String destinationFilePath = "/Users/alex/Workspace/CodeGeneratedFiles/Test.pdf";
+        String destinationFilePath = "/Users/alex/Workspace/CodeGeneratedFiles/PersonalDetails.pdf";
 
         Document document = new Document(new PdfDocument(new PdfWriter(new FileOutputStream(destinationFilePath))));
 
@@ -36,6 +41,9 @@ public class PDFGenerationService {
                 .setFont(pdfFont);
 
         document.add(personalDetailsTable);
+
+        Image image = addImage();
+        document.add(image);
 
         System.out.println("Process Ended");
         document.close();
@@ -65,6 +73,15 @@ public class PDFGenerationService {
         }
         System.out.println("returning from createPersonalDetailsTable");
         return personalDetailsTable;
+    }
+
+    public static Image addImage() throws IOException {
+        URL url = new URL("https://media.licdn.com/dms/image/D5603AQEQLX3LNYagEg/profile-displayphoto-shrink_800_800/0/1714743298405?e=1726704000&v=beta&t=Qp2nST99M0eOXOSqZVwIaaF9rY8KIWqV7q8klwxmluU");
+        Image image = new Image(ImageDataFactory.create(url));
+        image.setFixedPosition(200f, 50f)
+                .setHeight(300)
+                .setWidth(250);
+        return image;
     }
 
 
