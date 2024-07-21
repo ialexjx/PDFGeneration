@@ -8,7 +8,7 @@ import com.itextpdf.layout.element.Paragraph;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 
-public class TestPdfGeneration {
+public class TestPdfGeneration {-
     public static void main(String[] args) throws FileNotFoundException {
         String pdfDestination = "/Users/alex/Workspace/CodeGeneratedFiles/TestPdfGeneration.pdf";
         Document document = new Document(new PdfDocument(new PdfWriter(new FileOutputStream(pdfDestination))));

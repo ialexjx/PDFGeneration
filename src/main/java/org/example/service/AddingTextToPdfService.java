@@ -18,7 +18,7 @@ public class AddingTextToPdfService {
     public static void main(String[] args) throws IOException {
         System.out.println("Starting the pdf generation process");
         String destinationFilePath = "/Users/alex/Workspace/CodeGeneratedFiles/PdfFileWithText.pdf";
-        String paragraphText = "Hello there !!!!!!! Go is a procedural programming language. It was developed in 2007 by Robert Griesemer, Rob Pike, and Ken Thompson at Google but launched in 2009 as an open-source programming language. Programs are assembled by using packages, for efficient management of dependencies. This language also supports environment adopting patterns alike to dynamic languages. For eg., type inference (y := 0 is a valid declaration of a variable y of type float).\n" +
+        String paragraphText = "Hello there !!!!!!! -Go is a procedural programming language. It was developed in 2007 by Robert Griesemer, Rob Pike, and Ken Thompson at Google but launched in 2009 as an open-source programming language. Programs are assembled by using packages, for efficient management of dependencies. This language also supports environment adopting patterns alike to dynamic languages. For eg., type inference (y := 0 is a valid declaration of a variable y of type float).\n" +
                 "\n" +
                 "Go is a statically typed, concurrent, and garbage-collected programming language created at Google in 2009. It is designed to be simple, efficient, and easy to learn, making it a popular choice for building scalable network services, web applications, and command-line tools.\n" +
                 "\n" +
